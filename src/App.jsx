@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Figure from "./component/PokemonCard"
+import PokemonCard from "./component/PokemonCard"
 
 function App() {
  return (
       <div>
-        <Figure />
+        <PokemonCard />
       </div>   
   );
 }
