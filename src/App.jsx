@@ -1,28 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import PokemonCard from "./component/PokemonCard"
+import NavBar from './component/NavBar';
+
+
 
 
 function App() {
-  const [count, setCount] = useState(0);//On part de 0 => state
+  const [count, setCount] = useState(0);
 
-  const next = () =>{
-    setCount(count + 1)// on incrémente =>comportement
-  }
-  const previous = () =>{
-    setCount(count - 1)// on décrémente
-  }
- 
-  return (                    // affichage
-    <div className='pokemoneBox'>
-      <PokemonCard pokemon = {pokemonList[count]}/>
-
-    <div className='pokemoneBall'>
-     {count > 0 ? <button onClick={previous}>previous</button> : <button>First Pokemon</button>}
-      {/* <button onClick={next}>next</button> */}
-    {count < pokemonList.length -1 ? <button onClick={next}>next</button> : <button>Next Pokemon</button>}
-    </div>
-  </div>
+  return(
+  <>       
+  <PokemonCard pokemon = {pokemonList[count]}/>
+  <NavBar count = {count} setCount = {setCount} pokemonList={pokemonList}/>
+  </>
   )
 }
 
